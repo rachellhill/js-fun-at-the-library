@@ -20,7 +20,7 @@ var pages = 350;
 // condensed the book, use a built in math operator to make the page count a quarter
 // of what it currently is
 
-pages = 350 - (350 * 0.25);
+pages = pages * 0.25;
 
 // Initialize a new variable "movie", but leave it undefined
 
