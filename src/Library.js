@@ -28,15 +28,18 @@ function addBook(denverLibrary, book) {
 }
 
 function checkoutBook(denverLibrary, book, genre) {
-  //bc shelves is an object, you can use bracket notation to access the key directly
-  // if book is equal to the title in the shelf object, genre arrays at index 0, splice the book from the array at
-  // index 0, 1 item and return string. 
-  if (book === denverLibrary.shelves[genre][0].title) {
-    denverLibrary.shelves[genre].splice(0, 1);
-    return `You have now checked out ${book} from the ${denverLibrary.name}`;
-  } else {
+  // bc shelves is an object, you can use bracket notation to access the key directly
+  // for loop will iterate through the entire shelf before returning the last statement because of the way
+  // addBook is set up in the last else statement where it takes in current number of the array 
+  // if book is equal to the title in the shelf object - genre arrays at index 0, splice the book from the array at
+  // index 0, 1 item and return string.
+  for (var i = 0; i < denverLibrary.shelves[genre].length; i++) {
+    if (book === denverLibrary.shelves[genre][i].title) {
+      denverLibrary.shelves[genre].splice(i, 1);
+      return `You have now checked out ${book} from the ${denverLibrary.name}`;
+      }
+    }
     return `Sorry, there are currently no copies of ${book} available at the ${denverLibrary.name}`;
-  }
 };
 
 

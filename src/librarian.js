@@ -1,6 +1,11 @@
 class Librarian {
-  constructor() {
-    
+  constructor(personName, library, patron) {
+    this.name = personName;
+    this.library = library;
+    this.patron = patron
+  }
+  greetPatron(patron) {
+    return `Hello, ${this.name}!`;
   }
 }
 
